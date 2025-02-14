@@ -11,6 +11,7 @@ layer = -1
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
 offset_right = 1152.0
 offset_bottom = 648.0
+color = Color(0.386009, 0.702421, 0.342308, 1)
 
 [node name="GameManager" type="Node" parent="."]
 
