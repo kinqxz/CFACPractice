@@ -1,11 +1,8 @@
 [gd_scene load_steps=21 format=3 uid="uid://wf22a4o2jowf"]
 
-[ext_resource type="Script" path="res://player.gd" id="1_koiuk"]
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_koiuk"]
 [ext_resource type="Texture2D" uid="uid://ci0b287256oc8" path="res://character/placeholder/ToxicFrog/BlueBrown/ToxicFrogBlueBrown_Idle.png" id="2_g0dxd"]
 [ext_resource type="Texture2D" uid="uid://6rnqpx0xwpb6" path="res://character/placeholder/ToxicFrog/BlueBrown/ToxicFrogBlueBrown_Hop.png" id="2_ri6ok"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_npf3e"]
-radius = 28.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qbep7"]
 atlas = ExtResource("2_ri6ok")
@@ -140,19 +137,25 @@ animations = [{
 "speed": 12.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_npf3e"]
+radius = 14.0
+
 [node name="Player" type="CharacterBody2D"]
+texture_filter = 1
+scale = Vector2(0.5, 0.5)
 script = ExtResource("1_koiuk")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(0, -62)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-2, -27)
-shape = SubResource("CircleShape2D_npf3e")
+zoom = Vector2(2, 2)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(3, -32)
-scale = Vector2(3.42708, 3.42708)
+texture_filter = 1
+position = Vector2(2, -18)
+scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_xd8qw")
-animation = &"idle"
-frame_progress = 0.604414
+animation = &"hop"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -14)
+shape = SubResource("CircleShape2D_npf3e")
