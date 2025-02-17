@@ -5,6 +5,7 @@ extends CharacterBody2D
 @export var gravity = Vector2(0, 980)
 @onready var sprite = $AnimatedSprite2D
 
+const idleVector2 = Vector2(0, 0)
 const idleVector = Vector2(0, 0)
 
 func _physics_process(delta):
